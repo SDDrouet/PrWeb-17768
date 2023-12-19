@@ -6,25 +6,82 @@
 </head>
 
 <body style="margin: 0; background-color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, 'sans-serif'">
-<h3 align="center">Formulario para devolución de productos</h3>
+<h3 align="center">DEVOLUCIÓN DE PRODUCTOS</h3>
 <hr>
-<div style="width: 60%; margin: auto">
-  <form id="form1" name="form1" method="get">
-    <fieldset>
-      <legend>Formulario</legend>
-      <table align="center" width="100%" border="1">
+<div style="width: 50%; margin: auto">
+  <form id="form1" name="form1" method="post">
+    <fieldset style="border-radius: 10px">
+      <legend><strong>Devoluciones</strong></legend>
+      <table align="center" width="100%" border="0">
         <tbody>
           <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td><label for="cliente">Cliente:</label>
+              <br>
+              <select id="cliente" name="cliente" required style="width: 92%; height: 30px">
+                <option value="Arias">Arias Sebastian</option>
+                <option value="Bazurto">Bazurto Christopher</option>
+                <option value="Carrera">Carrera Nahir</option>
+              </select></td>
+            <td><label for="fechaDevolucion">Fecha de la devolución:</label>
+              <br>
+              <input type="date" id="fechaDevolucion" name="fechaDevolucion" required style="width: 90%; height: 26px"></td>
+          </tr>
+			<tr><td colspan="2"><hr></td></tr>
+          <tr style="vertical-align: top">
+            <td><label for="productosD">Productos devueltos:</label>
+              <br>
+              <select id="productosD1" name="productosD1" required style="width: 92%; height: 30px">
+                <option value="productoD1">Producto 1</option>
+                <option value="productoD2">Producto 2</option>
+                <option value="productoD3">Producto 3</option>
+                <option value="productoD4">Producto 4</option>
+              </select>
+              <br>
+              <select id="productosD2" name="productosD2" required style="width: 92%; height: 30px">
+                <option value="nada">-</option>
+                <option value="productoD1">Producto 1</option>
+                <option value="productoD2">Producto 2</option>
+                <option value="productoD3">Producto 3</option>
+                <option value="productoD4">Producto 4</option>
+              </select>
+              <br>
+              <select id="productosD3" name="productosD3" required style="width: 92%; height: 30px">
+                <option value="nada">-</option>
+                <option value="productoD1">Producto 1</option>
+                <option value="productoD2">Producto 2</option>
+                <option value="productoD3">Producto 3</option>
+                <option value="productoD4">Producto 4</option>
+              </select>
+              <br>
+              <select id="productosD4" name="productosD4" required style="width: 92%; height: 30px">
+                <option value="nada">-</option>
+                <option value="productoD1">Producto 1</option>
+                <option value="productoD2">Producto 2</option>
+                <option value="productoD3">Producto 3</option>
+                <option value="productoD4">Producto 4</option>
+              </select></td>
+            <td><label for="cantidadD1">Cantidad de cada producto:</label><br>
+              <input type="number" id="cantidadD1" name="cantidadD1" required placeholder="Ingrese la cantidad" value="1" min="1" style="width: 15%; height: 24px">
+              <br>
+              <input type="number" id="cantidadD2" name="cantidadD2" required placeholder="Ingrese la cantidad" value="0" min="0" style="width: 15%; height: 24px">
+              <br>
+              <input type="number" id="cantidadD3" name="cantidadD3" required placeholder="Ingrese la cantidad" value="0" min="0" style="width: 15%; height: 24px">
+              <br>
+              <input type="number" id="cantidadD4" name="cantidadD4" required placeholder="Ingrese la cantidad" value="0" min="0" style="width: 15%; height: 24px"></td>
           </tr>
           <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td colspan="2"><hr>
+              <label for="razonDevolucion">Razon de la devolución: </label>
+              <br>
+              <textarea id="razonDevolucion" name="razonDevolucion" maxlength="500" placeholder="Ingrese la razón de la devolución" style="width: 96%; height: 80px; resize: none" required></textarea></td>
           </tr>
           <tr>
-            <td width="50%"><p align="center"><input type="submit" name="submit" id="submit" value="Enviar" style="width: 125px; height: 30px"></p></td>
-            <td><p align="center"><input type="reset" name="reset" id="reset" value="Restablecer" style="width: 125px; height: 30px"></p></td>
+            <td width="50%"><p align="center">
+                <input type="submit" name="submit" id="submit" value="Enviar" style="width: 125px; height: 30px">
+              </p></td>
+            <td><p align="center">
+                <input type="reset" name="reset" id="reset" value="Restablecer" style="width: 125px; height: 30px">
+              </p></td>
           </tr>
         </tbody>
       </table>

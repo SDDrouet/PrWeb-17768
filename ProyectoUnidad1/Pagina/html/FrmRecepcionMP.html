@@ -6,25 +6,47 @@
 </head>
 
 <body style="margin: 0; background-color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, 'sans-serif'">
-<h3 align="center">Formulario para recepción de Materia Prima</h3>
+<h3 align="center">RECEPCIÓN DE MATERIA PRIMA</h3>
 <hr>
-<div style="width: 60%; margin: auto">
-  <form id="form1" name="form1" method="get">
-    <fieldset>
-      <legend>Formulario</legend>
-      <table align="center" width="100%" border="1">
+<div style="width: 50%; margin: auto">
+  <form id="form1" name="form1" method="post">
+    <fieldset style="border-radius: 10px">
+      <legend><strong>Recepción materia prima</strong></legend>
+      <table align="center" width="100%" border="0">
         <tbody>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+          <tr style="vertical-align: top">
+            <td>
+		<label for="nombreMateriaPrima">Nombre de la materia prima:</label><br>
+        <input type="text" id="nombreMateriaPrima" name="nombreMateriaPrima" required placeholder="Ingrese el nombre" style="width: 90%; height: 25px">
+		<br><br>
+        <label for="proveedorMateriaPrima">Proveedor de la materia prima:</label><br>
+        <input type="text" id="proveedorMateriaPrima" name="proveedorMateriaPrima" required placeholder="Ingrese el proveedor" style="width: 90%; height: 25px">
+		<br><br>
+        <label for="cantidadRecibida">Cantidad recibida:</label><br>
+        <input type="number" id="cantidadRecibida" name="cantidadRecibida" required placeholder="Ingrese la cantidad recibida" value="1" min="1" style="width: 25%; height: 25px">        
+        <select id="unidadMedida" name="unidadMedida" required style="width: 50%; height: 31px">
+            <option value="kg">Kilogramos (kg)</option>
+            <option value="g">Gramos (g)</option>
+            <option value="l">Litros (l)</option>
+            <option value="ml">Mililitros (ml)</option>
+            <option value="unidades">Unidades</option>
+        </select>
+
+        </td>
+            <td>
+			  <label for="fechaRecepcion">Fecha de recepción:</label> <br>
+        <input type="date" id="fechaRecepcion" name="fechaRecepcion" required style="width: 90%; height: 27px">
+  
+			  </td>
           </tr>
           <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td colspan="2"><hr><label for="notas">Notas adicionales:
+            </label><br>
+            <textarea id="notas" name="notas" placeholder="Ingrese notas adicionales" style="width: 96%; height: 80px; resize: none"></textarea></td>
           </tr>
           <tr>
-            <td width="50%"><p align="center"><input type="submit" name="submit" id="submit" value="Enviar" style="width: 125px; height: 30px"></p></td>
-            <td><p align="center"><input type="reset" name="reset" id="reset" value="Restablecer" style="width: 125px; height: 30px"></p></td>
+            <td width="50%"></td>
+            <td><p align="right"><input type="submit" name="submit" id="submit" value="Enviar" style="width: 40%; height: 30px"> <input type="reset" name="reset" id="reset" value="Restablecer" style="width: 40%; height: 30px">&nbsp;</p></td>
           </tr>
         </tbody>
       </table>

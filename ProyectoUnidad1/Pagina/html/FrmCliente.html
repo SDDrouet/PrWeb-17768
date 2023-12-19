@@ -6,36 +6,36 @@
 </head>
 
 <body style="margin: 0; background-color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, 'sans-serif'">
-<h3 align="center">Formulario para el registro de clientes</h3>
+<h3 align="center">REGISTRAR CLIENTES</h3>
 <hr>
-<div style="width: 60%; margin: auto">
-  <form id="form1" name="form1" method="get">
-    <fieldset>
-      <legend>Formulario</legend>
+<div style="width: 50%; margin: auto">
+  <form id="form1" name="form1" method="post">
+    <fieldset style="border-radius: 10px">
+      <legend><strong>Información del Cliente</strong></legend>
       <table align="center" width="100%" border="0">
         <tbody>
           <tr style="vertical-align: top">
-            <td >
+            <td width="50%">
 			    <label for="nombre">Nombre:</label><br>
-				<input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre" style="width: 200px">
+				<input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre" pattern="^[A-Za-z]+$" maxlength="30" style="width: 90%; height: 25px" autofocus>
 				<br><br>
 				<label for="apellido">Apellido:</label><br>
-				<input type="text" id="apellido" name="apellido" required placeholder="Ingrese su apellido" style="width: 200px">
+				<input type="text" id="apellido" name="apellido" required placeholder="Ingrese su apellido" pattern="^[A-Za-z]+$" maxlength="30" style="width: 90%; height: 25px">
 				<br><br>
 				<label for="cedula">Número de Cédula:</label><br>
-				<input type="text" id="cedula" name="cedula" required placeholder="Ingrese su número de cédula" pattern="[0-9]{10}" style="width: 200px">	
+				<input type="text" id="cedula" name="cedula" required placeholder="Ingrese su número de cédula" pattern="[0-9]{10}" maxlength="10" style="width: 90%; height: 25px">	
 
 				
 			  </td>
-            <td>
+            <td width="50%">
 			    <label for="email">Correo Electrónico:</label><br>
-				<input type="email" id="email" name="email" required placeholder="usuario@dominio.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" style="width: 200px">
+				<input type="email" id="email" name="email" required placeholder="usuario@dominio.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" style="width: 95%; height: 25px">
 				<br><br>
 				<label for="telefono">Teléfono:</label><br>
-				<input type="tel" id="telefono" name="telefono" required placeholder="Ingrese su número de teléfono" pattern="[0-9]{10}" style="width: 200px">
+				<input type="tel" id="telefono" name="telefono" required placeholder="Ingrese su número de teléfono" pattern="[0-9]{10}" style="width: 95%; height: 25px">
 				<br><br>
 				<label for="direccion">Dirección:</label><br>
-				<input type="text" id="direccion" name="direccion" required placeholder="Ingrese su dirección" style="width: 200px">
+				<input type="text" id="direccion" name="direccion" required placeholder="Ingrese su dirección" style="width: 95%; height: 25px">
 			  </td>
           </tr>
           <tr>
@@ -45,7 +45,7 @@
           </tr>
           <tr>
             <td width="50%"></td>
-            <td><p align="right"><input type="submit" name="submit" id="submit" value="Enviar" style="width: 125px; height: 30px"> <input type="reset" name="reset" id="reset" value="Restablecer" style="width: 125px; height: 30px"></p></td>
+            <td><p align="right"><input type="submit" name="submit" id="submit" value="Enviar" style="width: 40%; height: 30px"> <input type="reset" name="reset" id="reset" value="Restablecer" style="width: 40%; height: 30px">&nbsp;</p></td>
           </tr>
         </tbody>
       </table>
