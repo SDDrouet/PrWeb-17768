@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formulario de cliente</title>
+</head>
+
+<body style="margin: 0; background-color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, 'sans-serif'">
+<h3 align="center">DEVOLUCIÓN DE PRODUCTOS</h3>
+<hr>
+<div style="width: 50%; margin: auto">
+  <form id="form1" name="form1" method="post" action="../php/PhpDevolucion.php">
+    <fieldset style="border-radius: 10px">
+      <legend><strong>Devoluciones</strong></legend>
+      <table align="center" width="100%" border="0">
+        <tbody>
+          <tr>
+            <td><label for="cliente">Cliente:</label>
+              <br>
+              <select id="cliente" name="cliente" required style="width: 92%; height: 30px">
+                <option value="Arias">Arias Sebastian</option>
+                <option value="Bazurto">Bazurto Christopher</option>
+                <option value="Carrera">Carrera Nahir</option>
+              </select></td>
+            <td><label for="fechaDevolucion">Fecha de la devolución:</label>
+              <br>
+              <input type="date" id="fechaDevolucion" name="fechaDevolucion" required style="width: 90%; height: 26px"></td>
+          </tr>
+			<tr><td colspan="2"><hr></td></tr>
+          <tr style="vertical-align: top">
+            <td><label for="productosD">Productos devueltos:</label>
+              <br>
+              <select id="productosD1" name="productosD1" required style="width: 92%; height: 30px">
+			<option value="Tela | CottonCraft">Tela | CottonCraft</option>
+			<option value="Tela | SoftSerenity Linen">Tela | SoftSerenity Linen</option>
+			<option value="Tela | PureGauze">Tela | PureGauze</option>
+            <option value="Sábanas | EvoSheets">Sábanas | EvoSheets</option>
+			<option value="Sábanas | Luxe Bliss">Sábanas | Luxe Bliss</option>
+			<option value="Cobijas | CozyBlend">Cobijas | CozyBlend</option>
+			<option value="Cobijas | WarmNova">Cobijas | WarmNova</option>
+			<option value="Duvets | SoftNest">Duvets | SoftNest</option>
+			<option value="Duvets | CloudLux">Duvets | CloudLux</option>
+			<option value="Cobertores | WrapVibe">Cobertores | WrapVibe</option>
+			<option value="Cobertores | CuddleWave">Cobertores | CuddleWave</option>
+              </select>
+              <br>
+              <select id="productosD2" name="productosD2" required style="width: 92%; height: 30px">
+				  <option value="nada">-</option>
+					<option value="Tela | CottonCraft">Tela | CottonCraft</option>
+					<option value="Tela | SoftSerenity Linen">Tela | SoftSerenity Linen</option>
+					<option value="Tela | PureGauze">Tela | PureGauze</option>
+					<option value="Sábanas | EvoSheets">Sábanas | EvoSheets</option>
+					<option value="Sábanas | Luxe Bliss">Sábanas | Luxe Bliss</option>
+					<option value="Cobijas | CozyBlend">Cobijas | CozyBlend</option>
+					<option value="Cobijas | WarmNova">Cobijas | WarmNova</option>
+					<option value="Duvets | SoftNest">Duvets | SoftNest</option>
+					<option value="Duvets | CloudLux">Duvets | CloudLux</option>
+					<option value="Cobertores | WrapVibe">Cobertores | WrapVibe</option>
+					<option value="Cobertores | CuddleWave">Cobertores | CuddleWave</option>
+              </select>
+              <br>
+              <select id="productosD3" name="productosD3" required style="width: 92%; height: 30px">
+				  <option value="nada">-</option>
+					<option value="Tela | CottonCraft">Tela | CottonCraft</option>
+					<option value="Tela | SoftSerenity Linen">Tela | SoftSerenity Linen</option>
+					<option value="Tela | PureGauze">Tela | PureGauze</option>
+					<option value="Sábanas | EvoSheets">Sábanas | EvoSheets</option>
+					<option value="Sábanas | Luxe Bliss">Sábanas | Luxe Bliss</option>
+					<option value="Cobijas | CozyBlend">Cobijas | CozyBlend</option>
+					<option value="Cobijas | WarmNova">Cobijas | WarmNova</option>
+					<option value="Duvets | SoftNest">Duvets | SoftNest</option>
+					<option value="Duvets | CloudLux">Duvets | CloudLux</option>
+					<option value="Cobertores | WrapVibe">Cobertores | WrapVibe</option>
+					<option value="Cobertores | CuddleWave">Cobertores | CuddleWave</option>
+              </select>
+              <br>
+              <select id="productosD4" name="productosD4" required style="width: 92%; height: 30px">
+				  <option value="nada">-</option>
+					<option value="Tela | CottonCraft">Tela | CottonCraft</option>
+					<option value="Tela | SoftSerenity Linen">Tela | SoftSerenity Linen</option>
+					<option value="Tela | PureGauze">Tela | PureGauze</option>
+					<option value="Sábanas | EvoSheets">Sábanas | EvoSheets</option>
+					<option value="Sábanas | Luxe Bliss">Sábanas | Luxe Bliss</option>
+					<option value="Cobijas | CozyBlend">Cobijas | CozyBlend</option>
+					<option value="Cobijas | WarmNova">Cobijas | WarmNova</option>
+					<option value="Duvets | SoftNest">Duvets | SoftNest</option>
+					<option value="Duvets | CloudLux">Duvets | CloudLux</option>
+					<option value="Cobertores | WrapVibe">Cobertores | WrapVibe</option>
+					<option value="Cobertores | CuddleWave">Cobertores | CuddleWave</option>
+              </select></td>
+            <td><label for="cantidadD1">Cantidad de cada producto:</label><br>
+              <input type="number" id="cantidadD1" name="cantidadD1" required placeholder="Ingrese la cantidad" value="1" min="1" style="width: 15%; height: 24px">
+              <br>
+              <input type="number" id="cantidadD2" name="cantidadD2" required placeholder="Ingrese la cantidad" value="0" min="0" style="width: 15%; height: 24px">
+              <br>
+              <input type="number" id="cantidadD3" name="cantidadD3" required placeholder="Ingrese la cantidad" value="0" min="0" style="width: 15%; height: 24px">
+              <br>
+              <input type="number" id="cantidadD4" name="cantidadD4" required placeholder="Ingrese la cantidad" value="0" min="0" style="width: 15%; height: 24px"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr>
+              <label for="razonDevolucion">Razon de la devolución: </label>
+              <br>
+              <textarea id="razonDevolucion" name="razonDevolucion" maxlength="500" placeholder="Ingrese la razón de la devolución" style="width: 96%; height: 80px; resize: none" required></textarea></td>
+          </tr>
+          <tr>
+            <td width="50%"><p align="center">
+                <input type="submit" name="submit" id="submit" value="Enviar" style="width: 125px; height: 30px">
+              </p></td>
+            <td><p align="center">
+                <input type="reset" name="reset" id="reset" value="Restablecer" style="width: 125px; height: 30px">
+              </p></td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </form>
+</div>
+</body>
+</html>
