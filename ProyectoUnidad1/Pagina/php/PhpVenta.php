@@ -7,6 +7,8 @@
 </head>
 
 <body>
+	<h2>Resultado del Registro de Venta</h2>
+	<table width="50%" align="center" border="1" style="border-collapse: collapse">
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $numeroVenta = isset($_POST['numeroVenta']) ? $_POST['numeroVenta'] : '';
@@ -26,11 +28,8 @@
             }
         }
 
-        echo "<h2>Resultado del Registro de Venta</h2>";
-        echo "<table border='1'>";
-
         echo "<tr><td colspan='2'><strong>Información de la Venta</strong></td></tr>";
-        echo "<tr><td>Número de Venta:</td><td>$numeroVenta</td></tr>";
+        echo "<tr><td width='50%'>Número de Venta:</td><td>$numeroVenta</td></tr>";
         echo "<tr><td>Cliente:</td><td>$cliente</td></tr>";
         echo "<tr><td>Consumidor Final:</td><td>$consumidorFinal</td></tr>";
         echo "<tr><td>Fecha de la Venta:</td><td>$fechaVenta</td></tr>";
@@ -41,9 +40,9 @@
             echo "<tr><td>{$producto['producto']}</td><td>{$producto['cantidad']}</td></tr>";
         }
 
-        echo "</table>";
     }
     ?>
+	</table>
 </body>
 
 </html>

@@ -7,6 +7,9 @@
 </head>
 
 <body>
+	<h2>Resultado de la Recepción de Materia Prima</h2>
+
+	<table width="50%" align="center" border="1" style="border-collapse: collapse">
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombreMateriaPrima = isset($_POST['nombreMateriaPrima']) ? $_POST['nombreMateriaPrima'] : '';
@@ -16,18 +19,15 @@
         $fechaRecepcion = isset($_POST['fechaRecepcion']) ? $_POST['fechaRecepcion'] : '';
         $notas = isset($_POST['notas']) ? $_POST['notas'] : '';
 
-        echo "<h2>Resultado de la Recepción de Materia Prima</h2>";
-        echo "<table border='1'>";
-
-        echo "<tr><td>Nombre de la Materia Prima:</td><td>$nombreMateriaPrima</td></tr>";
+        echo "<tr><td width='50%'>Nombre de la Materia Prima:</td><td>$nombreMateriaPrima</td></tr>";
         echo "<tr><td>Proveedor de la Materia Prima:</td><td>$proveedorMateriaPrima</td></tr>";
-        echo "<tr><td>Cantidad Recibida:</td><td>$cantidadRecibida $unidadMedida</td></tr>";
+        echo "<tr><td>Cantidad Recibida:</td><td>$cantidadRecibida [$unidadMedida]</td></tr>";
         echo "<tr><td>Fecha de Recepción:</td><td>$fechaRecepcion</td></tr>";
         echo "<tr><td>Notas Adicionales:</td><td>$notas</td></tr>";
 
-        echo "</table>";
     }
     ?>
+	</table>
 </body>
 
 </html>

@@ -7,6 +7,8 @@
 </head>
 
 <body>
+	<h2>Resultado del Registro de Producto</h2>
+	<table width="50%" align="center" border="1" style="border-collapse: collapse">
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombreProducto = isset($_POST['nombreProducto']) ? $_POST['nombreProducto'] : '';
@@ -16,19 +18,16 @@
         $cantidadStock = isset($_POST['cantidadStock']) ? $_POST['cantidadStock'] : 0;
         $descripcionProducto = isset($_POST['descripcionProducto']) ? $_POST['descripcionProducto'] : '';
 
-        echo "<h2>Resultado del Registro de Producto</h2>";
-        echo "<table border='1'>";
-
-        echo "<tr><td>Nombre del Producto:</td><td>$nombreProducto</td></tr>";
+        echo "<tr><td width='50%'>Nombre del Producto:</td><td>$nombreProducto</td></tr>";
         echo "<tr><td>Código de Producto:</td><td>$codigoProducto</td></tr>";
         echo "<tr><td>Categoría del Producto:</td><td>$categoriaProducto</td></tr>";
         echo "<tr><td>Precio Unitario ($):</td><td>$precioUnitario</td></tr>";
         echo "<tr><td>Cantidad en Stock:</td><td>$cantidadStock</td></tr>";
         echo "<tr><td>Descripción del Producto:</td><td>$descripcionProducto</td></tr>";
 
-        echo "</table>";
     }
     ?>
+	</table>
 </body>
 
 </html>

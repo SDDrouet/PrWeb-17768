@@ -7,6 +7,8 @@
 </head>
 
 <body>
+	<h2>Resultado del Registro de Devolución</h2>
+	<table width="50%" align="center" border="1" style="border-collapse: collapse">
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $cliente = isset($_POST['cliente']) ? $_POST['cliente'] : '';
@@ -25,10 +27,7 @@
 
         $razonDevolucion = isset($_POST['razonDevolucion']) ? $_POST['razonDevolucion'] : '';
 
-        echo "<h2>Resultado del Registro de Devolución</h2>";
-        echo "<table border='1'>";
-
-        echo "<tr><td>Fecha de la Devolución:</td><td>$fechaDevolucion</td></tr>";
+        echo "<tr><td width='50%'>Fecha de la Devolución:</td><td>$fechaDevolucion</td></tr>";
         echo "<tr><td>Cliente:</td><td>$cliente</td></tr>";
 
         echo "<tr><td colspan='2'><strong>Productos Devueltos</strong></td></tr>";
@@ -39,9 +38,10 @@
         echo "<tr><td colspan='2'><strong>Razón de Devolución</strong></td></tr>";
         echo "<tr><td colspan='2'>$razonDevolucion</td></tr>";
 
-        echo "</table>";
+        
     }
     ?>
+		</table>
 </body>
 
 </html>
