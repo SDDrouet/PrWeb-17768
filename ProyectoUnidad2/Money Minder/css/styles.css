@@ -227,3 +227,29 @@ body, html {
   line-height: 1.5;
   color: #FFFFFF;
 }
+
+/* Estilos específicos para los elementos de egreso */
+
+/* Estilo del título */
+.title {
+  color: white; /* Cambiar el color del título a blanco */
+}
+
+/* Estilo de los inputs, selects y textareas */
+.egreso-input,
+.egreso-select,
+.egreso-textarea {
+  background-color: #f2f2f2; /* Color de fondo deseado */
+  color: black; /* Color de texto original */
+}
+
+/* Estilo de los botones */
+.egreso-button {
+  background-color: #333; /* Color de fondo deseado */
+  color: white; /* Color de texto deseado */
+}
+.iegreso-label {
+  color: white; /* Cambiar el color del texto de los labels a blanco */
+  margin-bottom: 5px; /* Agregar margen inferior para separación */
+  display: block; /* Para que cada label ocupe una línea */
+}
