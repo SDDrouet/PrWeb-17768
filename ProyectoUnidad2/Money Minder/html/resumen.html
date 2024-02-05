@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/styles.css" type="text/css">
+<title>Tu Aplicación</title>
+</head>
+<body>
+<div class="container">
+  <main class="parent" id="background">
+    <div class="banner">
+		<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+		<a href="../index.html" class="selected">Salir</a>
+    </div>
+    <div class="content">
+      <h1 style="color: aliceblue">Resumen Financiero</h1>
+    </div>
+  </main>
+  <nav class="sidebar">
+    <button class="close-btn" style="height: 9%; width: 100%" onclick="toggleSidebar()">✕</button>
+    <ul>
+	 <li><a id="opResumen" href="resumen.html" class="selected">Resumen</a></li>
+	 <li><a id="opTransacciones" href="transacciones.html">Transacciones</a></li>
+	  <li><a id="opCategorias" href="categorías.html">Categorías</a></li>
+	  <li><a id="opInformes" href="informes.html">Informes</a></li>
+	  <li><a id="opExportar" href="exportar.html">Exportar</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+    function toggleSidebar() {
+      document.querySelector('.sidebar').classList.toggle('sidebar-open');
+    }
+  </script>
+</body>
+</html>
