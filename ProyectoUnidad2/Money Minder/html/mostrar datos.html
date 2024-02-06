@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Datos</title>
+</head>
+<body>
+    <h1>Datos del Archivo CSV</h1>
+    <div id="contenedorDatos"></div>
+
+    <script>
+        // Función para cargar los datos desde un archivo CSV
+        function cargarDatosDesdeCSV(rutaArchivo, funcion) {
+            fetch(rutaArchivo)
+            .then(response => response.text())
+            .then(text => {
+                const datos = parseCSV(text);
+                funcion(datos);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Función para parsear el contenido CSV y convertirlo en un array de objetos
+        function parseCSV(text) {
+            const filas = text.trim().split('\n');
+            const encabezados = filas.shift().split(',');
+            return filas.map(fila => {
+                const valores = fila.split(',');
+                const objeto = {};
+                encabezados.forEach((encabezado, index) => {
+                    objeto[encabezado] = valores[index];
+                });
+                return objeto;
+            });
+        }
+
+        // Función para mostrar los datos en una tabla en el HTML
+        function mostrarDatosEnHTML(datos) {
+            const contenedorDatos = document.getElementById('contenedorDatos');
+            const tabla = document.createElement('table');
+            const encabezados = Object.keys(datos[0]);
+
+            // Crear la fila de encabezados
+            const encabezadosRow = document.createElement('tr');
+            encabezados.forEach(encabezado => {
+                const th = document.createElement('th');
+                th.textContent = encabezado;
+                encabezadosRow.appendChild(th);
+            });
+            tabla.appendChild(encabezadosRow);
+
+            // Crear las filas de datos
+            datos.forEach(dato => {
+                const fila = document.createElement('tr');
+                encabezados.forEach(encabezado => {
+                    const td = document.createElement('td');
+                    td.textContent = dato[encabezado];
+                    fila.appendChild(td);
+                });
+                tabla.appendChild(fila);
+            });
+
+            contenedorDatos.appendChild(tabla);
+        }
+
+        // Llamar a la función para cargar los datos desde el archivo CSV
+        cargarDatosDesdeCSV('egresos.csv', mostrarDatosEnHTML);
+    </script>
+</body>
+</html>

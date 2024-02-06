@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Datos</title>
+</head>
+
+<body>
+    <a href="ingresos.html">inicio</a>
+    <div id="contenedorDatos"></div>
+
+    <script>
+        // script.js
+
+    function cargarDatosDesdeJSON(rutaArchivo, funcion) {
+        // Retornar la promesa generada por fetch para su uso externo
+        return fetch(rutaArchivo)
+            .then(response => {
+                // Verificar si la respuesta es exitosa (código de estado 200)
+                if (!response.ok) {
+                    throw new Error(`Error al cargar el archivo JSON. Código de estado: ${response.status}`);
+                }
+                // Devolver el cuerpo de la respuesta como JSON
+                return response.json();
+            })
+            .then(datos => {
+                // Operaciones con los datos después de cargar el JSON
+                console.log('Datos cargados desde el archivo JSON:', datos);
+
+                funcion(datos)
+                
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+            });
+    }
+
+    function extraerDatos(datos) {
+        datos.forEach(element => {
+            datosCargados.push(element);
+        });
+    }
+
+    function mostrarDatosEnHTML(datos) {
+    // Ejemplo: Imprimir los datos en el documento HTML
+    const contenedorDatos = document.getElementById('contenedorDatos');
+    var txt = "Ingreso, Categoría, Método de pago, Responsable, Fecha y hora, Observación<br>";
+
+    datos.forEach(element => {
+        txt += element.ingreso + ", ";
+        txt += element.categoria + ", ";
+        txt += element.metodo + ", ";
+        txt += element.responsable + ", ";
+        txt += element.fecha + ", ";
+        txt += element.observacion + "<br>";
+    });
+
+    contenedorDatos.innerHTML = txt;
+}
+
+
+    // Llamada a la función para cargar datos desde el archivo JSON
+    cargarDatosDesdeJSON('datos1.json', mostrarDatosEnHTML)
+
+
+    </script>
+</body>
+
+</html>

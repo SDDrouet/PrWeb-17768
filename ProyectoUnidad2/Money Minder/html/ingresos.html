@@ -14,15 +14,16 @@
         <a href="../index.html" class="selected">Salir</a>
     </div>
     <div class="content">
+		<a href="mostrar datos.html">mostrar datos</a>
       <h1 style="color: aliceblue">Ingresos</h1>
-      <form id="form1" name="form1" method="post">
+      <form id="miFormulario">
         <p>
-            <label for="number" style="color: aliceblue">Ingreso:</label>
-            <input name="number" type="number" required="required" id="number" placeholder="Ingrese un monto " min="0" step="1" autocomplete="on">
+            <label for="ingreso" style="color: aliceblue">Ingreso:</label>
+            <input name="number" type="number" required="required" id="ingreso" placeholder="Ingrese un monto " min="0" step="1" autocomplete="on">
         </p>
         <p>
-            <label for="select" style="color: aliceblue">Categoria:</label>
-            <select name="select" id="select">
+            <label for="categoria" style="color: aliceblue">Categoria:</label>
+            <select name="select" id="categoria">
                 <option value="Salario">Salario</option>
                 <option value="Inversiones">Inversiones</option>
                 <option value="Renta">Renta</option>
@@ -32,8 +33,8 @@
             <input type="text" id="categoriaOtro" name="categoriaOtro" style="display:none;" placeholder="Especifique otro...">
         </p>
         <p>
-            <label for="select2" style="color: aliceblue">Método de pago:</label>
-            <select name="select2" id="select2">
+            <label for="metodo" style="color: aliceblue">Método de pago:</label>
+            <select name="select2" id="metodo">
                 <option value="Transferencia">Transferencia</option>
                 <option value="Efectivo">Efectivo</option>
                 <option value="Tarjeta">Tarjeta</option>
@@ -42,19 +43,19 @@
             <input type="text" id="metodoPagoOtro" name="metodoPagoOtro" style="display:none;" placeholder="Especifique otro...">
         </p>
         <p>
-            <label for="textfield" style="color: aliceblue">Responsable:</label>
-            <input name="textfield" type="text" id="responsa" placeholder="Ingrese un responsable">
+            <label for="responsable" style="color: aliceblue">Responsable:</label>
+            <input name="textfield" type="text" id="responsable" placeholder="Ingrese un responsable">
         </p>
         <p>
-            <label for="datetime-local" style="color: aliceblue">Fecha y hora:</label>
-            <input name="datetime-local" type="datetime-local" required="required" id="datetime-local" autocomplete="on">
+            <label for="fecha" style="color: aliceblue">Fecha y hora:</label>
+            <input name="datetime-local" type="datetime-local" required="required" id="fecha" autocomplete="on">
         </p>
         <p>
-          <label for="textarea" style="color: aliceblue">Observación:</label>
-            <textarea name="textarea" id="textarea" placeholder="Ingrese observaciones" style="width: 25%; height: 100px;resize: none;"></textarea>
+          <label for="observacion" style="color: aliceblue">Observación:</label>
+            <textarea name="textarea" id="observacion" placeholder="Ingrese observaciones" style="width: 25%; height: 100px;resize: none;"></textarea>
         </p>
         <p>
-            <input type="button" name="button" id="button" value="Guardar">
+            <button type="button" onclick="enviarFormulario()">Enviar</button>
             <input type="button" name="button2" id="button2" value="Restablecer">
         </p>
     </form>
@@ -71,11 +72,30 @@
     </ul>
   </nav>
 </div>
+	<script src="script.js"></script>
 <script src= "../js/scriptIngreso.js"></script>
 <script>
-    function toggleSidebar() {
-      document.querySelector('.sidebar').classList.toggle('sidebar-open');
-    }
+	function enviarFormulario() {
+    const formulario = document.getElementById('miFormulario');
+    const datos = {
+        ingreso: formulario.ingreso.value,
+        categoria: formulario.categoria.value,
+        metodo: formulario.metodo.value,
+        responsable: formulario.responsable.value,
+        fecha: formulario.fecha.value,
+        observacion: formulario.observacion.value
+    };
+
+    // Obtener el nombre del archivo externamente
+    const nombreArchivo = "egresos.csv";
+
+    // Llamada a la función para enviar datos al servidor
+    enviarDatosAlServidor('guardar_datos.php', datos, nombreArchivo);
+}
+function eliminarArch() {
+				eliminarArchivos();
+			}
+   
   </script>
 </body>
 </html>

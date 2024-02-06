@@ -14,15 +14,16 @@
         <a href="../index.html" class="selected">Salir</a>
     </div>
     <div class="content">
+		<a href="mostrarEgresos.html">mostrar datos</a>
       <h1 style="color: aliceblue" >Egresos</h1>
-      <form id="form1" name="form1" method="post">
+      <form id="miFormulario">
         <p>
-            <label for="number" style="color: aliceblue">Egreso:</label>
-            <input name="number" type="number" required="required" id="number" class="egreso-input" placeholder="Ingrese un monto " min="0" step="1" autocomplete="on">
+            <label for="egreso" style="color: aliceblue">Egreso:</label>
+            <input name="number" type="number" required="required" id="egreso" class="egreso-input" placeholder="Ingrese un monto " min="0" step="1" autocomplete="on">
         </p>
         <p>
-            <label for="select" style="color: aliceblue">Categoría:</label>
-            <select name="select" id="select" class="egreso-select">
+            <label for="categoria" style="color: aliceblue">Categoría:</label>
+            <select name="select" id="categoria" class="egreso-select">
               <option value="Agua">Agua</option>
               <option value="Ahorro">Ahorro</option>
               <option value="Alquiler">Alquiler</option>
@@ -35,8 +36,8 @@
             <input type="text" id="categoriaOtro" name="categoriaOtro" class="egreso-input" style="display:none;" placeholder="Especifique otro...">
         </p>
         <p>
-            <label for="select2" style="color: aliceblue">Método de pago:</label>
-            <select name="select2" id="select2" class="egreso-select">
+            <label for="metodo" style="color: aliceblue">Método de pago:</label>
+            <select name="select2" id="metodo" class="egreso-select">
                 <option value="Transferencia">Transferencia</option>
                 <option value="Efectivo">Efectivo</option>
                 <option value="Tarjeta">Tarjeta</option>
@@ -45,20 +46,20 @@
             <input type="text" id="metodoPagoOtro" name="metodoPagoOtro" class="egreso-input" style="display:none;" placeholder="Especifique otro...">
         </p>
         <p>
-            <label for="textfield" style="color: aliceblue">Responsable:</label>
-            <input name="textfield" type="text" id="responsa" class="egreso-input" placeholder="Ingrese un responsable">
+            <label for="responsable" style="color: aliceblue">Responsable:</label>
+            <input name="textfield" type="text" id="responsable" class="egreso-input" placeholder="Ingrese un responsable">
         </p>
         <p>
-            <label for="datetime-local" style="color: aliceblue">Fecha y hora:</label>
-            <input name="datetime-local" type="datetime-local" required="required" id="datetime-local" class="egreso-input" autocomplete="on">
+            <label for="fecha" style="color: aliceblue">Fecha y hora:</label>
+            <input name="datetime-local" type="datetime-local" required="required" id="fecha" class="egreso-input" autocomplete="on">
         </p>
         <p>
-            <label for="textarea" style="color: aliceblue">Observación:</label>
-            <textarea name="textarea" id="textarea" class="egreso-textarea" placeholder="Ingrese observaciones" style="width: 25%; height: 100px; resize: none;"></textarea>
+            <label for="observacion" style="color: aliceblue">Observación:</label>
+            <textarea name="textarea" id="observacion" class="egreso-textarea" placeholder="Ingrese observaciones" style="width: 25%; height: 100px; resize: none;"></textarea>
         </p>
         <p>
-            <input type="button" name="button" id="button" class="egreso-button" value="Guardar">
-            <input type="button" name="button2" id="button2" class="egreso-button" value="Restablecer">
+            <button type="button" onclick="enviarFormulario()">Enviar</button>
+            <input type="button" name="button2" id="button2" value="Restablecer">
         </p>
     </form>
     </div>
@@ -74,11 +75,30 @@
     </ul>
   </nav>
 </div>
+	<script src="script.js"></script>
 <script src= "../js/scriptEgreso.js"></script>
 <script>
-    function toggleSidebar() {
-      document.querySelector('.sidebar').classList.toggle('sidebar-open');
-    }
+	function enviarFormulario() {
+    const formulario = document.getElementById('miFormulario');
+    const datos = {
+        egreso: formulario.egreso.value,
+        categoria: formulario.categoria.value,
+        metodo: formulario.metodo.value,
+        responsable: formulario.responsable.value,
+        fecha: formulario.fecha.value,
+        observacion: formulario.observacion.value
+    };
+
+    // Obtener el nombre del archivo externamente
+    const nombreArchivo = "ingresos.csv";
+
+    // Llamada a la función para enviar datos al servidor
+    enviarDatosAlServidor('egresos.php', datos, nombreArchivo);
+}
+function eliminarArch() {
+				eliminarArchivos();
+			}
+   
   </script>
 </body>
 </html>
