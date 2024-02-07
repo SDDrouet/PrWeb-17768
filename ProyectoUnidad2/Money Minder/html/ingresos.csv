@@ -1,0 +1,9 @@
+ingreso,categoria,metodo,responsable,fecha,observacion
+11,salario,Transferencia,sebas,2024-02-06T09:29,ninguna
+78,salario,Transferencia,hola,2024-02-06T09:31,d
+330,salario,Transferencia,sebas,2024-02-06T09:35,ss
+11000000000,salario,Transferencia,arias,2024-02-06T09:38,ninunaaaaaaaaaaaaaaaa
+33,salario,Transferencia,arias,2024-02-06T13:32,s
+500,salario,Tarjeta,Nahir,2024-02-06T21:30,"Sin observaciones"
+500,regalos,Tarjeta,Nahir,2024-02-06T21:30,"Sin observaciones"
+100000000000000,Inversiones,Tarjeta,Sebas,2024-02-07T01:56,rrrrrrrrrrr,ingresos.csv

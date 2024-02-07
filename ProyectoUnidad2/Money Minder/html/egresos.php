@@ -27,5 +27,5 @@ $data = file_get_contents("php://input");
 $datosFormulario = json_decode($data, true);
 
 // Llamada a la función para agregar datos al archivo CSV
-agregarDatosACSV('datos.csv', $datosFormulario);
+agregarDatosACSV('egresos.csv', $datosFormulario);
 ?>

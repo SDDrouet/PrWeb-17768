@@ -26,17 +26,6 @@ $data = file_get_contents("php://input");
 // Decodificar datos JSON a un array asociativo
 $datosFormulario = json_decode($data, true);
 
-// Acceder al nombre del archivo y a la categoría
-$nombreArchivo = $datosFormulario['nombreArchivo'];
-$categoria = $datosFormulario['categoria'];
-
-// Eliminar las claves 'nombreArchivo' y 'categoria' del array
-unset($datosFormulario['nombreArchivo']);
-unset($datosFormulario['categoria']);
-
-// Determinar el nombre del archivo CSV basado en la categoría
-$nombreArchivoCSV = ($categoria == 'ingresos') ? 'ingresos.csv' : 'egresos.csv';
-
-// Llamada a la función
-agregarDatosACSV($nombreArchivoCSV, $datosFormulario);
+// Llamada a la función para agregar datos al archivo CSV
+agregarDatosACSV('ingresos.csv', $datosFormulario);
 ?>

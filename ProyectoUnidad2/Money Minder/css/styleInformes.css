@@ -1,0 +1,75 @@
+@charset "utf-8";
+.contentGrid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+@media (max-width: 900px) {
+	.contentGrid {
+		display: flex;
+		flex-direction: column;
+	}
+}
+.contentLeft {
+	grid-area: 2 / 1 / 6 / 3;
+	padding: 3%;
+}
+.contentRight {
+	grid-area: 2 / 3 / 6 / 7;
+	padding: 3%;
+}
+.title {
+	grid-area: 1 / 1 / 2 / 7;
+	margin-top: 3%;
+	background: #000000;
+	opacity: 0.8;
+	align-items: center;
+}
+.title h1 {
+	color: aliceblue;
+	text-align: center;
+	font-size: 200%;
+}
+canvas {
+	width: 100%;
+	height: auto;
+}
+.gallery {
+	display: flex;
+	overflow-x: hidden;
+	width: auto;
+	height: auto;
+	position: relative;
+	margin: auto;
+	justify-content: center;
+	height: auto;
+}
+.chart-container {
+	flex: 0 0 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.5s ease;
+}
+.chart {
+	width: 100%;
+	height: auto;
+	border: 5px solid #ccc;
+}
+.prev-btn, .next-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 1%;
+}
+.prev-btn {
+	left: 1%;
+}
+.next-btn {
+	right: 1%;
+}

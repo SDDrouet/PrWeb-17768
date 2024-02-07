@@ -4,103 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link rel="stylesheet" href="../css/styleEgresos.css" type="text/css">
     <title>Tu Aplicación</title>
 </head>
 <body>
 <div class="container">
-  <main class="parent" id="background">
-    <div class="banner">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-        <a href="../index.html" class="selected">Salir</a>
-    </div>
-    <div class="content">
-		<a href="mostrarEgresos.html">mostrar datos</a>
-      <h1 style="color: aliceblue" >Egresos</h1>
-      <form id="miFormulario">
-        <p>
-            <label for="egreso" style="color: aliceblue">Egreso:</label>
-            <input name="number" type="number" required="required" id="egreso" class="egreso-input" placeholder="Ingrese un monto " min="0" step="1" autocomplete="on">
-        </p>
-        <p>
-            <label for="categoria" style="color: aliceblue">Categoría:</label>
-            <select name="select" id="categoria" class="egreso-select">
-              <option value="Agua">Agua</option>
-              <option value="Ahorro">Ahorro</option>
-              <option value="Alquiler">Alquiler</option>
-              <option value="Comida">Comida</option>
-              <option value="Transporte">Transporte</option>
-              <option value="Escuela">Escuela</option>
-              <option value="Medicina">Medicina</option>
-                <option value="Otros">Otros</option>
-            </select>
-            <input type="text" id="categoriaOtro" name="categoriaOtro" class="egreso-input" style="display:none;" placeholder="Especifique otro...">
-        </p>
-        <p>
-            <label for="metodo" style="color: aliceblue">Método de pago:</label>
-            <select name="select2" id="metodo" class="egreso-select">
-                <option value="Transferencia">Transferencia</option>
-                <option value="Efectivo">Efectivo</option>
-                <option value="Tarjeta">Tarjeta</option>
-                <option value="Otros">Otros</option>
-            </select>
-            <input type="text" id="metodoPagoOtro" name="metodoPagoOtro" class="egreso-input" style="display:none;" placeholder="Especifique otro...">
-        </p>
-        <p>
-            <label for="responsable" style="color: aliceblue">Responsable:</label>
-            <input name="textfield" type="text" id="responsable" class="egreso-input" placeholder="Ingrese un responsable">
-        </p>
-        <p>
-            <label for="fecha" style="color: aliceblue">Fecha y hora:</label>
-            <input name="datetime-local" type="datetime-local" required="required" id="fecha" class="egreso-input" autocomplete="on">
-        </p>
-        <p>
-            <label for="observacion" style="color: aliceblue">Observación:</label>
-            <textarea name="textarea" id="observacion" class="egreso-textarea" placeholder="Ingrese observaciones" style="width: 25%; height: 100px; resize: none;"></textarea>
-        </p>
-        <p>
-            <button type="button" onclick="enviarFormulario()">Enviar</button>
-            <input type="button" name="button2" id="button2" value="Restablecer">
-        </p>
-    </form>
-    </div>
-  </main>
-  <nav class="sidebar">
-       <button class="close-btn" style="height: 9%; width: 100%;" onclick="toggleSidebar()">✕</button>
-    <ul>
-     <li><a id="opResumen" href="resumen.html" >Resumen</a></li>
-     <li><a id="opTransacciones" href= "ingresos.html">Ingresos</a></li>
-      <li><a id="opCategorias" href="egresos.html" class="selected">Egresos</a></li>
-      <li><a id="opInformes" href="informes.html">Informes</a></li>
-      <li><a id="opExportar" href="exportar.html">Exportar</a></li>
-    </ul>
-  </nav>
+    <main class="parent" id="background">
+        <div class="banner">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <a href="../index.html" class="selected">Salir</a>
+        </div>
+        <div class="content">
+			<div class="formulario">
+				<div class="formLeft"><h1 class="title">Egresos</h1> </div>
+				<div class="formRight"> 
+					<form id="miFormulario">
+						<p>
+							<label for="egreso">Egreso:</label>
+							<input name="number" type="number" required="required" id="egreso" class="egreso-input"
+								   placeholder="Ingrese un monto " min="0" step="1" autocomplete="on">
+						</p>
+						<p>
+							<label for="categoria">Categoría:</label>
+							<select name="select" id="categoria" class="egreso-select">
+								<option value="Agua">Agua</option>
+								<option value="Ahorro">Ahorro</option>
+								<option value="Alquiler">Alquiler</option>
+								<option value="Comida">Comida</option>
+								<option value="Transporte">Transporte</option>
+								<option value="Escuela">Escuela</option>
+								<option value="Medicina">Medicina</option>
+								<option value="Otros">Otros</option>
+							</select>
+							<input type="text" id="categoriaOtro" name="categoriaOtro" class="egreso-input"
+								   style="display:none;" placeholder="Especifique otro...">
+						</p>
+						<p>
+							<label for="metodo">Método de pago:</label>
+							<select name="select2" id="metodo" class="egreso-select">
+								<option value="Transferencia">Transferencia</option>
+								<option value="Efectivo">Efectivo</option>
+								<option value="Tarjeta">Tarjeta</option>
+								<option value="Otros">Otros</option>
+							</select>
+							<input type="text" id="metodoPagoOtro" name="metodoPagoOtro" class="egreso-input"
+								   style="display:none;" placeholder="Especifique otro...">
+						</p>
+						<p>
+							<label for="responsable">Responsable:</label>
+							<input name="textfield" type="text" id="responsable" class="egreso-input"
+								   placeholder="Ingrese un responsable">
+						</p>
+						<p>
+							<label for="fecha">Fecha y hora:</label>
+							<input name="datetime-local" type="datetime-local" required="required" id="fecha"
+								   class="egreso-input" autocomplete="on">
+						</p>
+						<p>
+							<label for="observacion">Observación:</label>
+							<textarea name="textarea" id="observacion" class="egreso-textarea"
+									  placeholder="Ingrese observaciones"></textarea>
+						</p>
+						<p>
+							<button type="button"onclick="validarYEnviarFormulario()">Enviar</button>
+							<input type="button" name="button2" id="button2" value="Restablecer">
+						</p>
+					</form>
+
+				</div>
+			</div>
+            <a href="mostrarEgresos.html">mostrar datos</a>
+        </div>
+    </main>
+    <nav class="sidebar">
+        <button class="close-btn" style="height: 9%; width: 100%;" onclick="toggleSidebar()">✕</button>
+        <ul>
+            <li><a id="opResumen" href="resumen.html">Resumen</a></li>
+            <li><a id="opTransacciones" href="ingresos.html">Ingresos</a></li>
+            <li><a id="opCategorias" href="egresos.html" class="selected">Egresos</a></li>
+            <li><a id="opInformes" href="informes.html">Informes</a></li>
+            <li><a id="opExportar" href="exportar.html">Exportar</a></li>
+        </ul>
+    </nav>
 </div>
-	<script src="script.js"></script>
-<script src= "../js/scriptEgreso.js"></script>
 <script>
-	function enviarFormulario() {
-    const formulario = document.getElementById('miFormulario');
-    const datos = {
-        egreso: formulario.egreso.value,
-        categoria: formulario.categoria.value,
-        metodo: formulario.metodo.value,
-        responsable: formulario.responsable.value,
-        fecha: formulario.fecha.value,
-        observacion: formulario.observacion.value
-    };
+    function enviarFormulario() {
+        const formulario = document.getElementById('miFormulario');
+        const datos = {
+            egreso: formulario.egreso.value,
+            categoria: formulario.categoria.value,
+            metodo: formulario.metodo.value,
+            responsable: formulario.responsable.value,
+            fecha: formulario.fecha.value,
+            observacion: formulario.observacion.value
+        };
 
-    // Obtener el nombre del archivo externamente
-    const nombreArchivo = "ingresos.csv";
+        // Obtener el nombre del archivo externamente
+        const nombreArchivo = "egresos.csv";
 
-    // Llamada a la función para enviar datos al servidor
-    enviarDatosAlServidor('egresos.php', datos, nombreArchivo);
-}
-function eliminarArch() {
-				eliminarArchivos();
-			}
-   
-  </script>
+        // Llamada a la función para enviar datos al servidor
+        enviarDatosAlServidor('egresos.php', datos, nombreArchivo);
+    }
+
+    function eliminarArch() {
+        eliminarArchivos();
+    }
+	// Función para limpiar el formulario
+    function limpiarFormulario() {
+        document.getElementById('miFormulario').reset();
+    }
+	function validarYEnviarFormulario() {
+        const formulario = document.getElementById('miFormulario');
+
+        // Verificar si todos los campos requeridos están completos
+        if (formulario.checkValidity()) {
+            // Si el formulario es válido, enviar los datos
+          
+			enviarFormulario();
+			window.alert("Sus datos han sido enviados con exito");
+			limpiarFormulario();
+        } else {
+            // Si hay campos incompletos, mostrar un mensaje de error
+            alert("Por favor complete todos los campos antes de enviar el formulario.");
+        }
+    }
+</script>
+<script src="../js/scriptBase.js"></script>
+<script src="../js/scriptEgreso.js"></script>
+<script src="../js/scriptPrincipal.js"></script>
 </body>
 </html>
-
-

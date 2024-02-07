@@ -4,34 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/styles.css" type="text/css">
+	<link rel="stylesheet" href="../css/styleInformes.css" type="text/css">
+	<link rel="stylesheet" href="../css/styleTablas.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <title>Tu Aplicación</title>
 </head>
 <body>
 <div class="container">
   <main class="parent" id="background">
     <div class="banner">
-		<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-		<a href="../index.html" class="selected">Salir</a>
-    </div>
-    <div class="content">
-      <h1 style="color: aliceblue">Informes y Estadísticas</h1>
+      <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+      <a href="../index.html" class="selected">Salir</a> </div>
+    <div class="content contentGrid">
+      <div class="title">
+        <h1>Informes y Estadísticas</h1>
+      </div>
+      <div class="contentLeft">
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr class="table-header">
+                <th>Meses</th>
+                <th>Ingresos</th>
+                <th>Egresos</th>
+              </tr>
+            </thead>
+            <tbody class="table-content">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="contentRight">
+        <div class="gallery">
+          <div class="chart-container">
+            <canvas class="chart" id="canvas"></canvas>
+          </div>
+          <div class="prev-btn" onclick="prevChart()">&#10094;</div>
+          <div class="next-btn" onclick="nextChart()">&#10095;</div>
+        </div>
+      </div>
     </div>
   </main>
- <nav class="sidebar">
+  <nav class="sidebar">
     <button class="close-btn" style="height: 9%; width: 100%" onclick="toggleSidebar()">✕</button>
     <ul>
-	 <li><a id="opResumen" href="resumen.html" >Resumen</a></li>
+	  <li><a id="opResumen" href="resumen.html">Resumen</a></li>
      <li><a id="opTransacciones" href= "ingresos.html">Ingresos</a></li>
       <li><a id="opCategorias" href="egresos.html" >Egresos</a></li>
-      <li><a id="opInformes" href="informes.html" class="selected">Informes</a></li>
+      <li><a id="opInformes" href="informes.html" class="selected" >Informes</a></li>
       <li><a id="opExportar" href="exportar.html">Exportar</a></li>
     </ul>
   </nav>
 </div>
-<script>
-    function toggleSidebar() {
-      document.querySelector('.sidebar').classList.toggle('sidebar-open');
-    }
-  </script>
+<script src="../js/scriptInformes.js"></script>
+<script src="../js/scriptPrincipal.js"></script>
+	<script src="../js/scriptBase.js"></script>
 </body>
 </html>
