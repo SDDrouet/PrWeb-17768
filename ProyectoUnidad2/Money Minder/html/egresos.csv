@@ -1,14 +1,2 @@
-egreso,categoria,metodo,responsable,fecha,observacion
-45,Agua,Transferencia,YOMI,2024-02-06T13:47,NINUNFAAA
-444444444,Transferencia,yO,2024-02-07T00:18,X
-2222,Efectivo,Naya,2024-02-16T00:20,Descripción
-6666666,Transferencia,Klever,2024-02-16T00:20,Descripción
-500,Tarjeta,Danae,2024-02-07T07:23,Obs
-452,Otros,admin,2024-02-07T01:24,aa
-5000000000,Comida,Tarjeta,Nahir,2024-02-07T01:28,ssssssss,egresos.csv
-7000000,Transferencia,ndcarrera2,2024-02-07T01:43,hola
-800,Efectivo,nahir,2024-02-07T06:45,ss
-Renta,4000,Renta,Efectivo,Nahir,2024-02-07T01:48,sssd
-Renta,8000000000,Renta,Efectivo,mnm,2024-02-07T01:48,eeeeeee
-Salario,800000,Salario,Transferencia,nahir,2024-02-07T01:49,lll
-Renta,70000000,Renta,Efectivo,Nahir,2024-02-07T01:52,obs
+egreso,categoria,metodo,responsable,fecha,observacion,nombreArchivo
+55,Agua,Transferencia,sebas,2024-02-07T03:09,s,egresos.csv
