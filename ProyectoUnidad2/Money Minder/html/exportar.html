@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/styles.css" type="text/css">
 <title>Tu Aplicación</title>
+	<script src="lib/jspdf.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -15,6 +16,68 @@
     </div>
     <div class="content">
       <h1 style="color: aliceblue">Exportar Datos</h1>
+		 <h1>Exportar a PDF</h1>
+    <button onclick="exportarPDF('egresos.csv')">Exportar Egresos a PDF</button>
+    <button onclick="exportarPDF('ingresos.csv')">Exportar Ingresos a PDF</button>
+
+    <script>
+        function exportarPDF(archivo) {
+            // Crear un nuevo documento PDF
+            const doc = new jsPDF();
+
+            // Agregar título al documento
+            doc.text('Datos', 10, 10);
+
+            // Obtener datos desde el archivo especificado
+            fetch(archivo)
+            .then(response => response.text())
+            .then(text => {
+                const datos = parseCSV(text);
+                generarTablaPDF(doc, datos);
+            });
+
+            // Función para parsear el contenido CSV y convertirlo en un array de objetos
+            function parseCSV(text) {
+                const filas = text.trim().split('\n');
+                const encabezados = filas.shift().split('\t'); // Separador de tabulación en lugar de coma
+                return filas.map(fila => {
+                    const valores = fila.split('\t'); // Separador de tabulación en lugar de coma
+                    const objeto = {};
+                    encabezados.forEach((encabezado, index) => {
+                        objeto[encabezado] = valores[index];
+                    });
+                    return objeto;
+                });
+            }
+
+            // Función para generar una tabla en el PDF
+            function generarTablaPDF(doc, datos) {
+                let y = 30; // Posición inicial de la tabla
+
+                // Encabezados
+                Object.keys(datos[0]).forEach((encabezado, index) => {
+                    doc.text(encabezado, 10, y);
+                    y += 10;
+                });
+
+                // Datos
+                datos.forEach(dato => {
+                    y += 10;
+                    Object.values(dato).forEach((valor, index) => {
+                        doc.text(valor, 10, y);
+                        y += 10;
+                    });
+                });
+
+                doc.addPage(); // Agregar una nueva página para los siguientes datos
+            }
+
+            // Guardar el documento PDF
+            setTimeout(() => {
+                doc.save(`datos_${archivo.split('.')[0]}.pdf`);
+            }, 1000); // Esperar 1 segundo antes de guardar el PDF para asegurarse de que los datos se han cargado correctamente
+        }
+    </script>
     </div>
   </main>
   <nav class="sidebar">
