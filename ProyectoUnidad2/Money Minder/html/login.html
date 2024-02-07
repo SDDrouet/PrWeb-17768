@@ -3,21 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../css/styles.css" type="text/css">
-<title>Tu Aplicación</title>
+	<link rel="stylesheet" href="../css/styles.css" type="text/css">
+<link rel="stylesheet" href="../css/styleEgresos.css" type="text/css">
+<title>Login</title>
+<style>
+
+</style>
 </head>
 <body>
 <div class="container">
-  <main class="parent" id="background">
-    <div class="banner">
-      
-    </div>
-    <div class="content">
-      <h1 style="color: aliceblue">Formulario de Login</h1>
-		<a href="resumen.html" class="selected">Entrar</a>
-    </div>
-  </main>
+    <main class="parent" id="backgroundInicio">
+        <div class="banner">
+            <a href="../index.html" class="selected">Salir</a>
+        </div>
+        <div class="content" style=" height: 600px; margin: auto">
+			<div class="formulario" style=" height: 400px; margin: auto; flex: auto;">
+				<div class="formLeft"><h1 class="title">Inicio de Sesión</h1> </div>
+				<div class="formRight"> 
+					<form id="miFormulario"  >
+						<label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+						<input type="button" value="Iniciar Sesión" class="login-button" style="margin: 30px;" onclick=" validarYEnviarFormulario()">
+					</form>
+
+				</div>
+			</div>
+        </div>
+    </main>
 </div>
+<script>
+function redirectToHTML() {
+    // Redirigir al otro archivo HTML
+    window.location.href = "resumen.html";
+}
+	function validarYEnviarFormulario() {
+        const formulario = document.getElementById('miFormulario');
+
+        // Verificar si todos los campos requeridos están completos
+        if (formulario.checkValidity()) {
+            // Si el formulario es válido, enviar los datos
+          
+			redirectToHTML()
+        } else {
+            // Si hay campos incompletos, mostrar un mensaje de error
+            alert("Por favor complete todos los campos antes de enviar el formulario.");
+        }
+    }
+</script>
 
 </body>
 </html>
+
+
